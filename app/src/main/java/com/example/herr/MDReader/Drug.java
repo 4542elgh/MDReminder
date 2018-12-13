@@ -101,6 +101,7 @@ public class Drug {
         this.activeIngredient = activeIngredient;
     }
 
+    @Ignore
     public Drug(String inactiveIngredient, String purpose,
                 String warnings, String questions,
                 String whenUsing, String productNdc,
