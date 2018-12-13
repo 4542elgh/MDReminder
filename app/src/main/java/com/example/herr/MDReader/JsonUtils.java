@@ -8,15 +8,15 @@ import java.util.ArrayList;
 
 public class JsonUtils {
 
-    public static ArrayList<Drug> getDrugRepository(String json) {
+    public static ArrayList<Drug> getDrugList(String json) {
 
-        ArrayList<Drug> drugRepository = new ArrayList<>();
+        ArrayList<Drug> drugList = new ArrayList<>();
 
         try {
-            JSONObject mainJsonObject = new JSONObject(json);
+            JSONObject jsonRespond = new JSONObject(json);
 
             // get json array where name = "results"
-            JSONArray fields = mainJsonObject.getJSONArray("results");
+            JSONArray fields = jsonRespond.getJSONArray("results");
 
             for (int i = 0; i < fields.length(); i++) {
 
@@ -24,7 +24,7 @@ public class JsonUtils {
                 JSONObject field = fields.getJSONObject(i);
 
                 // add each field into the drug repository
-                drugRepository.add( new Drug (
+                drugList.add( new Drug (
                         field.getString("inactive_ingredient"),
                         field.getString("pupose"),
                         field.getString("warnings"),
@@ -50,6 +50,6 @@ public class JsonUtils {
             e.printStackTrace();
         }
 
-        return drugRepository;
+        return drugList;
     }
 }
