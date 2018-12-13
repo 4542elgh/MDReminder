@@ -1,167 +1,200 @@
 package com.example.herr.MDReader;
 
-// create the Drug model
+// each medication will contain these info:
 public class Drug {
-    String active_ingredient = "active_ingredient";
-    String inactive_ingredient = "inactive_ingredient";
-    String manufacturer_name = "manufacturer_name";
-    String product_type = "product_type";
-    String route = "route";
-    String brand_name = "brand_name";
-    String product_ndc = "product_ndc";
-    String package_ndc = "package_ndc";
-    String warnings = "warnings";
-    String dosage_and_administration = "dosage_and_administration";
-    String stop_use = "stop_use";
-    String purpose = "purpose";
-    String questions = "questions";
-    String when_using = "when_using";
-    String indications_and_usage = "indications_and_usage";
+    private String inactiveIngredient;
+    private String purpose;
+    private String warnings;
+    private String questions;
+    private String whenUsing;
+    private String productNdc;
+    private String prodType;
+    private String route;
+    private String packageNdc;
+    private String brand_name;
+    private String manufacturer_name;
+    private String version;
+    private String dosageAndAdministration;
+    private String pregnancyOrBreastFeeding;
+    private String stop_use;
+    private String do_not_use;
+    private String indicationsAndUsage;
+    private String activeIngredient;
 
-    // Drug constructor
-    public Drug(String active_ingredient, String inactive_ingredient,
-                String manufacturer_name, String product_type,
-                String route, String brand_name, String product_ndc,
-                String package_ndc, String warnings, String dosage_and_administration,
-                String stop_use, String purpose, String questions,
-                String when_using, String indications_and_usage) {
+    public Drug(String inactiveIngredient, String purpose,
+                String warnings, String questions,
+                String whenUsing, String productNdc,
+                String prodType, String route, String packageNdc,
+                String brand_name, String manufacturer_name,
+                String version, String dosageAndAdministration,
+                String pregnancyOrBreastFeeding, String stop_use,
+                String do_not_use, String indicationsAndUsage,
+                String activeIngredient) {
 
-        this.active_ingredient = active_ingredient;
-        this.inactive_ingredient = inactive_ingredient;
-        this.manufacturer_name = manufacturer_name;
-        this.product_type = product_type;
-        this.route = route;
-        this.brand_name = brand_name;
-        this.product_ndc = product_ndc;
-        this.package_ndc = package_ndc;
-        this.warnings = warnings;
-        this.dosage_and_administration = dosage_and_administration;
-        this.stop_use = stop_use;
+        this.inactiveIngredient = inactiveIngredient;
         this.purpose = purpose;
+        this.warnings = warnings;
         this.questions = questions;
-        this.when_using = when_using;
-        this.indications_and_usage = indications_and_usage;
+        this.whenUsing = whenUsing;
+        this.productNdc = productNdc;
+        this.prodType = prodType;
+        this.route = route;
+        this.packageNdc = packageNdc;
+        this.brand_name = brand_name;
+        this.manufacturer_name = manufacturer_name;
+        this.version = version;
+        this.dosageAndAdministration = dosageAndAdministration;
+        this.pregnancyOrBreastFeeding = pregnancyOrBreastFeeding;
+        this.stop_use = stop_use;
+        this.do_not_use = do_not_use;
+        this.indicationsAndUsage = indicationsAndUsage;
+        this.activeIngredient = activeIngredient;
     }
 
-    // Drug Getter()
-    public String getActive_ingredient() {
-        return active_ingredient;
-    }
+    // Getter()
 
-    public String getInactive_ingredient() {
-        return inactive_ingredient;
-    }
-
-    public String getManufacturer_name() {
-        return manufacturer_name;
-    }
-
-    public String getProduct_type() {
-        return product_type;
-    }
-
-    public String getRoute() {
-        return route;
-    }
-
-    public String getBrand_name() {
-        return brand_name;
-    }
-
-    public String getProduct_ndc() {
-        return product_ndc;
-    }
-
-    public String getPackage_ndc() {
-        return package_ndc;
-    }
-
-    public String getWarnings() {
-        return warnings;
-    }
-
-    public String getDosage_and_administration() {
-        return dosage_and_administration;
-    }
-
-    public String getStop_use() {
-        return stop_use;
+    public String getInactiveIngredient() {
+        return inactiveIngredient;
     }
 
     public String getPurpose() {
         return purpose;
     }
 
+    public String getWarnings() {
+        return warnings;
+    }
+
     public String getQuestions() {
         return questions;
     }
 
-    public String getWhen_using() {
-        return when_using;
+    public String getWhenUsing() {
+        return whenUsing;
     }
 
-    public String getIndications_and_usage() {
-        return indications_and_usage;
+    public String getProductNdc() {
+        return productNdc;
     }
 
-    // Drug Setter()
-    public void setActive_ingredient(String active_ingredient) {
-        this.active_ingredient = active_ingredient;
+    public String getProdType() {
+        return prodType;
     }
 
-    public void setInactive_ingredient(String inactive_ingredient) {
-        this.inactive_ingredient = inactive_ingredient;
+    public String getRoute() {
+        return route;
     }
 
-    public void setManufacturer_name(String manufacturer_name) {
-        this.manufacturer_name = manufacturer_name;
+    public String getPackageNdc() {
+        return packageNdc;
     }
 
-    public void setProduct_type(String product_type) {
-        this.product_type = product_type;
+    public String getBrand_name() {
+        return brand_name;
     }
 
-    public void setRoute(String route) {
-        this.route = route;
+    public String getManufacturer_name() {
+        return manufacturer_name;
     }
 
-    public void setBrand_name(String brand_name) {
-        this.brand_name = brand_name;
+    public String getVersion() {
+        return version;
     }
 
-    public void setProduct_ndc(String product_ndc) {
-        this.product_ndc = product_ndc;
+    public String getDosageAndAdministration() {
+        return dosageAndAdministration;
     }
 
-    public void setPackage_ndc(String package_ndc) {
-        this.package_ndc = package_ndc;
+    public String getPregnancyOrBreastFeeding() {
+        return pregnancyOrBreastFeeding;
     }
 
-    public void setWarnings(String warnings) {
-        this.warnings = warnings;
+    public String getStop_use() {
+        return stop_use;
     }
 
-    public void setDosage_and_administration(String dosage_and_administration) {
-        this.dosage_and_administration = dosage_and_administration;
+    public String getDo_not_use() {
+        return do_not_use;
     }
 
-    public void setStop_use(String stop_use) {
-        this.stop_use = stop_use;
+    public String getIndicationsAndUsage() {
+        return indicationsAndUsage;
+    }
+
+    public String getActiveIngredient() {
+        return activeIngredient;
+    }
+
+    // Setter()
+    public void setInactiveIngredient(String inactiveIngredient) {
+        this.inactiveIngredient = inactiveIngredient;
     }
 
     public void setPurpose(String purpose) {
         this.purpose = purpose;
     }
 
+    public void setWarnings(String warnings) {
+        this.warnings = warnings;
+    }
+
     public void setQuestions(String questions) {
         this.questions = questions;
     }
 
-    public void setWhen_using(String when_using) {
-        this.when_using = when_using;
+    public void setWhenUsing(String whenUsing) {
+        this.whenUsing = whenUsing;
     }
 
-    public void setIndications_and_usage(String indications_and_usage) {
-        this.indications_and_usage = indications_and_usage;
+    public void setProductNdc(String productNdc) {
+        this.productNdc = productNdc;
+    }
+
+    public void setProdType(String prodType) {
+        this.prodType = prodType;
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
+    }
+
+    public void setPackageNdc(String packageNdc) {
+        this.packageNdc = packageNdc;
+    }
+
+    public void setBrand_name(String brand_name) {
+        this.brand_name = brand_name;
+    }
+
+    public void setManufacturer_name(String manufacturer_name) {
+        this.manufacturer_name = manufacturer_name;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public void setDosageAndAdministration(String dosageAndAdministration) {
+        this.dosageAndAdministration = dosageAndAdministration;
+    }
+
+    public void setPregnancyOrBreastFeeding(String pregnancyOrBreastFeeding) {
+        this.pregnancyOrBreastFeeding = pregnancyOrBreastFeeding;
+    }
+
+    public void setStop_use(String stop_use) {
+        this.stop_use = stop_use;
+    }
+
+    public void setDo_not_use(String do_not_use) {
+        this.do_not_use = do_not_use;
+    }
+
+    public void setIndicationsAndUsage(String indicationsAndUsage) {
+        this.indicationsAndUsage = indicationsAndUsage;
+    }
+
+    public void setActiveIngredient(String activeIngredient) {
+        this.activeIngredient = activeIngredient;
     }
 }
