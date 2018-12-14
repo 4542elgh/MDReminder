@@ -57,12 +57,10 @@ public class Drug {
     @ColumnInfo(name="activeIngredient")
     private String activeIngredient;
 
-    public Drug(int id,
-                String inactiveIngredient, String warnings,
+    public Drug(int id, String inactiveIngredient, String warnings,
                 String whenUsing, String productNdc,
                 String prodType, String route, String packageNdc,
-                String brand_name, String version,
-                String dosageAndAdministration,
+                String brand_name, String dosageAndAdministration,
                 String pregnancyOrBreastFeeding, String stop_use,
                 String do_not_use, String indicationsAndUsage,
                 String activeIngredient) {
@@ -85,12 +83,11 @@ public class Drug {
     }
 
     @Ignore
-    public Drug(String inactiveIngredient, String purpose,
-                String warnings, String questions,
+    public Drug(String inactiveIngredient,
+                String warnings,
                 String whenUsing, String productNdc,
                 String prodType, String route, String packageNdc,
-                String brand_name, String manufacturer_name,
-                String version, String dosageAndAdministration,
+                String brand_name, String dosageAndAdministration,
                 String pregnancyOrBreastFeeding, String stop_use,
                 String do_not_use, String indicationsAndUsage,
                 String activeIngredient) {
