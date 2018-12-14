@@ -139,7 +139,7 @@ public class JsonUtils {
                 if (field.has("active_ingredients")){
                     active_ingredients = "";
                     JSONArray subFields = field.getJSONArray("active_ingredients");
-                    if (subFields.length()==1){
+                    if (subFields.length()==1 && !subFields.get(0).toString().contains("strength")){
                         active_ingredients = subFields.get(0).toString();
                     }
                     else{

@@ -2,9 +2,6 @@ package com.example.herr.MDReader;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,7 +12,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAdapter.MDItemViewHolder> {
@@ -109,13 +107,16 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 
 
             String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
-                    + "https://api.fda.gov/drug/label.json?search=openfda.product_ndc:"
-                    + listDrugs.get(listIndex).getProductNdc();
+                    + "https%3A%2F%2Fapi.fda.gov%2Fdrug%2Fndc.json%3Fsearch%3Dproduct_ndc%3A";
 
+                    try {
+                        urlString+=URLEncoder.encode(listDrugs.get(listIndex).getProductNdc(), "UTF-8");
+                    }
+                    catch (UnsupportedEncodingException e){
+                        e.printStackTrace();
+                    }
             //Picasso.with(this).load(urlString).into(imageView);
-
             Picasso.get().load(urlString).into(imageView);
-
             inactiveIngredient.setText("Inactive Ingredient: "+listDrugs.get(listIndex).getInactiveIngredient());
             warnings.setText("Warnings: "+listDrugs.get(listIndex).getWarnings());
             whenUsing.setText("When Using: "+listDrugs.get(listIndex).getWhenUsing());
