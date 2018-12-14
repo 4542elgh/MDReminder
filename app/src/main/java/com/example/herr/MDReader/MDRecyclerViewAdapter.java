@@ -96,7 +96,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 //            prodType.setText("Product Type: "+listDrugs.get(listIndex).getProdType());
 //            route.setText("Route: "+listDrugs.get(listIndex).getRoute());
 //            packageNdc.setText("Package NDC: "+listDrugs.get(listIndex).getPackageNdc());
-            brand_name.setText("Brand Name: "+listDrugs.get(listIndex).getBrand_name());
+            brand_name.setText(listDrugs.get(listIndex).getBrand_name());
             dosageAndAdministration.setText("Dosage and Administration: "+listDrugs.get(listIndex).getDosageAndAdministration());
 //            pregnancyOrBreastFeeding.setText("Pregnancy or Breast Feeding: "+listDrugs.get(listIndex).getPregnancyOrBreastFeeding());
 //            stop_use.setText("Stop Use: "+listDrugs.get(listIndex).getStop_use());
