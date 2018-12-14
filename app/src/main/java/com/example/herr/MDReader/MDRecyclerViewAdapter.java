@@ -93,6 +93,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         }
 
         void bind(final int listIndex) {
+            packageView.setImageResource(0);
             String drawableName = listDrugs.get(listIndex).getProductNdc();
             drawableName = "a"+drawableName;
             drawableName = drawableName.replace('-','a');
