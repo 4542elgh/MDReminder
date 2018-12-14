@@ -63,7 +63,6 @@ public class JsonUtils {
                 if (field.has("route")){
                     route = "";
                     JSONArray subFields = field.getJSONArray("route");
-//                    active_ingredients =  field.getString("active_ingredients");
                     for (int j = 0; j < subFields.length(); j++) {
                         route += "\n\u2022\u0009    "+subFields.get(j);
                     }
