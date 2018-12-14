@@ -126,48 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) { //when finish async call
-            ArrayList<Drug> drugList = new ArrayList<>();
-
-            try {
-                JSONObject jsonRespond = new JSONObject(s);
-
-                // get json array where name = "results"
-                JSONArray fields = jsonRespond.getJSONArray("results");
-
-                for (int i = 0; i < fields.length(); i++) {
-                    Log.d("idk","I am getting called");
-                    // get object at the index
-                    JSONObject field = fields.getJSONObject(i);
-//                    Log.d( "debug_log", field.getString("product_ndc"));
-                    for (int j = 0; j < field.names().length(); j++) {
-                        Log.d("names:",field.names().getString(j));
-                    }
-                    // add each field into the drug repository
-//                    drugList.add( new Drug (
-//                            field.getString("inactive_ingredient"),
-//                            field.getString("pupose"),
-//                            field.getString("warnings"),
-//                            field.getString("questions"),
-//                            field.getString("when_using"),
-//                            field.getString("product_ndc"),
-//                            field.getString("product_type"),
-//                            field.getString("route"),
-//                            field.getString("package_ndc"),
-//                            field.getString("brand_name"),
-//                            field.getString("manufacturer_name"),
-//                            field.getString("version"),
-//                            field.getString("dosage_and_administration"),
-//                            field.getString("pregnancy_or_breast_feeding"),
-//                            field.getString("stop_use"),
-//                            field.getString("do_not_use"),
-//                            field.getString("indications_and_usage"),
-//                            field.getString("active_ingredients")
-//                    ));
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            Log.d("json_result",s);
+            ArrayList<Drug> drugList = JsonUtils.getDrugList(s);
         }
     }
 }
