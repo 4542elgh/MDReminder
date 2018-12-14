@@ -4,7 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="2dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
     card_view:cardUseCompatPadding="true"
@@ -13,8 +12,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="0dip" >
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/brand_name"
@@ -255,11 +253,12 @@
 
         <ImageView
             android:id="@+id/packageView"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="2dp"
             android:paddingBottom="10dp"
+            android:paddingRight="15dp"
             android:adjustViewBounds="true"
             android:src="@color/colorAccent"
             card_view:layout_constraintEnd_toEndOf="parent"

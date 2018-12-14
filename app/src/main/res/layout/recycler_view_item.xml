@@ -17,18 +17,7 @@
         android:layout_height="wrap_content"
         android:padding="0dip" >
 
-        <ImageView
-            android:id="@+id/packageView"
-            android:layout_width="176dp"
-            android:layout_height="137dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:adjustViewBounds="true"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="1.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/do_not_use" />
+
         <TextView
             android:id="@+id/brand_name"
             android:layout_width="0dip"
@@ -61,7 +50,7 @@
             card_view:layout_constraintVertical_bias="0.0"/>
 
         <TextView
-            android:id="@+id/warnings"
+            android:id="@+id/indicationsAndUsage"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -76,67 +65,82 @@
             card_view:layout_constraintTop_toBottomOf="@+id/productNdc"
             card_view:layout_constraintVertical_bias="0.0"/>
 
-        <TextView
-            android:id="@+id/dosageAndAdministration"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textSize="14sp"
-            android:fontFamily="@font/opensans_light"
-            card_view:layout_constraintHorizontal_bias="1.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/warnings"
-            card_view:layout_constraintVertical_bias="0.0"/>
-
-        <TextView
-            android:id="@+id/whenUsing"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textSize="14sp"
-            android:fontFamily="@font/opensans_light"
-            card_view:layout_constraintHorizontal_bias="1.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/dosageAndAdministration"
-            card_view:layout_constraintVertical_bias="0.0"/>
-
-        <TextView
-            android:id="@+id/do_not_use"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:textSize="14sp"
-            android:fontFamily="@font/opensans_light"
-            card_view:layout_constraintHorizontal_bias="1.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/whenUsing"
-            card_view:layout_constraintVertical_bias="0.0"/>
-
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="10dp"
-            android:adjustViewBounds="true"
-            android:src="@color/colorAccent"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/do_not_use" />
+        android:id="@+id/packageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintHorizontal_bias="1.0"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/indicationsAndUsage" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:adjustViewBounds="true"-->
+            <!--android:src="@color/colorAccent"-->
+            <!--card_view:layout_constraintEnd_toEndOf="parent"-->
+            <!--card_view:layout_constraintHorizontal_bias="0.0"-->
+            <!--card_view:layout_constraintStart_toStartOf="parent"-->
+            <!--card_view:layout_constraintTop_toBottomOf="@+id/do_not_use" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/dosageAndAdministration"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:textSize="14sp"-->
+            <!--android:fontFamily="@font/opensans_light"-->
+            <!--card_view:layout_constraintHorizontal_bias="1.0"-->
+            <!--card_view:layout_constraintStart_toStartOf="parent"-->
+            <!--card_view:layout_constraintTop_toBottomOf="@+id/warnings"-->
+            <!--card_view:layout_constraintVertical_bias="0.0"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/whenUsing"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:textSize="14sp"-->
+            <!--android:fontFamily="@font/opensans_light"-->
+            <!--card_view:layout_constraintHorizontal_bias="1.0"-->
+            <!--card_view:layout_constraintStart_toStartOf="parent"-->
+            <!--card_view:layout_constraintTop_toBottomOf="@+id/dosageAndAdministration"-->
+            <!--card_view:layout_constraintVertical_bias="0.0"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/do_not_use"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:textSize="14sp"-->
+            <!--android:fontFamily="@font/opensans_light"-->
+            <!--card_view:layout_constraintHorizontal_bias="1.0"-->
+            <!--card_view:layout_constraintStart_toStartOf="parent"-->
+            <!--card_view:layout_constraintTop_toBottomOf="@+id/whenUsing"-->
+            <!--card_view:layout_constraintVertical_bias="0.0"/>-->
+
+
 
         <!--<TextView-->
         <!--android:id="@+id/inactiveIngredient"-->

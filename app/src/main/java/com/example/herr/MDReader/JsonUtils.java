@@ -39,9 +39,20 @@ public class JsonUtils {
                     }
                 }
 
+//                String warnings = "N/A";
+//                if (field.has("warnings")){
+//                    warnings =  field.getString("warnings");
+//                }
                 String warnings = "N/A";
                 if (field.has("warnings")){
-                    warnings =  field.getString("warnings");
+                    warnings = "";
+                    JSONArray subFields = field.getJSONArray("warnings");
+//                    active_ingredients =  field.getString("active_ingredients");
+                    for (int j = 0; j < subFields.length(); j++) {
+                        warnings += "\n\u2022\u0009    "+subFields.getJSONObject(j).getString("warnings")
+                                + "    "
+                                + subFields.getJSONObject(j).getString("warnings");
+                    }
                 }
 
                 String when_using = "N/A";
