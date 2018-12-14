@@ -58,14 +58,16 @@ public abstract class DrugDatabase extends RoomDatabase {
             //read ndc.json and parse values into dao
             InputStream dataStream = context.getResources().openRawResource(R.raw.ndc);
 
-            String line;
-            StringBuilder text = new StringBuilder();
+            String json;
 
             try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(dataStream, "UTF-8"));
-                while((line = reader.readLine()) != null) {
-                    text.append(line).append(" ");
-                }
+                int size = dataStream.available();
+                byte[] buffer = new byte[size];
+                dataStream.read(buffer);
+                dataStream.close();
+                json = new String(buffer, "UTF-8");
+
+                drugDao.insert(JsonUtils.getDrugList(json));
             }
             catch (Exception e){
                 Log.d("exception", e.toString());

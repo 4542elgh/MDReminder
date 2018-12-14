@@ -46,7 +46,7 @@ public class DrugRepository {
             return null;
         }
     }
-    
+
     //    private class syncDBAsyncTask extends AsyncTask<List<Drug>, Void, Void> {
 //        private DrugDao mAsyncTaskDao;
 //        syncDBAsyncTask(DrugDao dao) {
