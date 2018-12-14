@@ -11,14 +11,8 @@ import static org.junit.Assert.*;
 
 public class NetworkUtilsUnitTest {
     @Test
-    public void labelUrlTest() {
-        assertEquals("https://api.fda.gov/drug/ndc.json?search=product_type:human&limit=10",
-                NetworkUtils.buildNdcUrl());
-    }
-
-    @Test
     public void httpUrlConnectionTest() throws Exception {
-        String urlStr = "https://api.fda.gov/drug/label.json?search=indications_and_usage=cough&limit=10";
+        String urlStr = "https://api.fda.gov/drug/ndc.json?search=product_ndc:68428-036";
 
         try {
             URL url = new URL(urlStr);
@@ -34,17 +28,5 @@ public class NetworkUtilsUnitTest {
             throw e;
         }
     }
-//
-//    @Test
-//    public void encodeUrlTest() {
-//        assertEquals("https://api.fda.gov/drug/label.json?search=indications_and_usage%3Acough%26limit%3D10",
-//                NetworkUtils.encodeUrl("indications_and_usage", "cough"));
-//    }
-//
-//    @Test
-//    public void decodeUrlTest() {
-//        assertEquals("https://api.fda.gov/drug/label.json?search=indications_and_usage:cough&limit=10",
-//                NetworkUtils.decodeUrl("https://api.fda.gov/drug/label.json?search=indications_and_usage%3Acough%26limit%3D10"));
-//    }
 
 }
