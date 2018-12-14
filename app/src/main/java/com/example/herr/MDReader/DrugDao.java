@@ -13,6 +13,9 @@ public interface DrugDao {
     @Insert
     void insert(List<Drug> drugs);
 
+    @Insert
+    void insert(Drug drug);
+
     @Query("DELETE FROM drugs")
     void clearAll();
 

@@ -30,9 +30,9 @@ public class DrugRepository {
         new updateListAsyncTask(mDrugDao).execute(items);
     }
 
-    public void sync(List<Drug> items){
-        new syncDBAsyncTask(mDrugDao).execute(items);
-    }
+//    public void sync(List<Drug> items){
+//        new syncDBAsyncTask(mDrugDao).execute(items);
+//    }
 
     private class updateListAsyncTask extends AsyncTask<List<Drug>, Void, Void> {
         private DrugDao mAsyncTaskDao;
@@ -47,28 +47,28 @@ public class DrugRepository {
         }
     }
 
-    private class syncDBAsyncTask extends AsyncTask<List<Drug>, Void, Void> {
-        private DrugDao mAsyncTaskDao;
-        syncDBAsyncTask(DrugDao dao) {
-            mAsyncTaskDao = dao;
-        }
-
-        @Override
-        protected Void doInBackground(final List<Drug>... params) {
-            try {
-                // temporarily pass empty string until able to test buildURL function
-                URL drugSearchUrl = NetworkUtils.buildUrl("", "");
-                String response = NetworkUtils.getResponseFromHttpUrl(drugSearchUrl);
-                mAsyncTaskDao.clearAll();
-                mAsyncTaskDao.insert(JsonUtils.getDrugRepository(response));
-            }
-            catch(Exception e) {
-                Log.e("exception during sync", e.toString());
-            }
-
-
-            return null;
-        }
-    }
+//    private class syncDBAsyncTask extends AsyncTask<List<Drug>, Void, Void> {
+//        private DrugDao mAsyncTaskDao;
+//        syncDBAsyncTask(DrugDao dao) {
+//            mAsyncTaskDao = dao;
+//        }
+//
+//        @Override
+//        protected Void doInBackground(final List<Drug>... params) {
+//            try {
+//                // temporarily pass empty string until able to test buildURL function
+//                URL drugSearchUrl = NetworkUtils.buildUrl("", "");
+//                String response = NetworkUtils.getResponseFromHttpUrl(drugSearchUrl);
+//                mAsyncTaskDao.clearAll();
+//                mAsyncTaskDao.insert(JsonUtils.getDrugRepository(response));
+//            }
+//            catch(Exception e) {
+//                Log.e("exception during sync", e.toString());
+//            }
+//
+//
+//            return null;
+//        }
+//    }
 
 }
