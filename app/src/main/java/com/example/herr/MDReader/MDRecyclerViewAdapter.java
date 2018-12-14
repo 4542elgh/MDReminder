@@ -7,7 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -17,6 +20,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
     Context instance; //referencing instance, so this adapter know what app was doing
     Intent intent = null;
     ArrayList<Drug> listDrugs; //new arraylist of newsitem from async task
+    ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
     public MDRecyclerViewAdapter(Context context, ArrayList<Drug> listDrugs){ //constructor
         this.instance = context;
@@ -94,6 +98,24 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
             do_not_use.setText("Do Not Use: "+listDrugs.get(listIndex).getDo_not_use());
             indicationsAndUsage.setText("Indications and Usage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
             activeIngredient.setText("Active Ingredient: "+listDrugs.get(listIndex).getActiveIngredient());
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + "https://api.fda.gov/drug/ndc.json?search=product_ndc:" + listDrugs.get(listIndex).getProductNdc();
+
+                    //Picasso.with(this).load(urlString).into(imageView);
+
+                    Picasso.get().load(urlString).into(imageView);
+
+                    /*intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
+                    intent.putExtra("urlString", urlString);
+                    intent.setPackage("com.android.chrome");
+                    instance.startActivity(intent);*/
+                }
+            });
 
             //binding click listener
 //            itemView.setOnClickListener(new View.OnClickListener() {
