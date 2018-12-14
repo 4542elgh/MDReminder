@@ -55,17 +55,6 @@ public class MainActivity extends AppCompatActivity {
 //                mNewsAdapter.setNews(new ArrayList<NewsItem>(news));
             }
         });
-
-
-
-        //TODO: finish implementing recycler view logic here
-
-        final Button button = findViewById(R.id.qr_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -149,5 +138,4 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
