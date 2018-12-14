@@ -11,6 +11,8 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.Nullable;
 import android.arch.lifecycle.Observer;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -128,5 +130,11 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) { //when finish async call
             ArrayList<Drug> drugList = JsonUtils.getDrugList(s);
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_buttons,menu);
+        return true;
     }
 }
