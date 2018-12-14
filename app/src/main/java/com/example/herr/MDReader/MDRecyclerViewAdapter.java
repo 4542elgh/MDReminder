@@ -45,22 +45,55 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
     }
 
     public class MDItemViewHolder extends RecyclerView.ViewHolder{ //text items for the POJO
-        TextView title;
-        TextView description;
-        TextView date;
+        TextView inactiveIngredient;
+        TextView warnings;
+        TextView whenUsing;
+        TextView productNdc;
+        TextView prodType;
+        TextView route;
+        TextView packageNdc;
+        TextView brand_name;
+        TextView dosageAndAdministration;
+        TextView pregnancyOrBreastFeeding;
+        TextView stop_use;
+        TextView do_not_use;
+        TextView indicationsAndUsage;
+        TextView activeIngredient;
 
         public MDItemViewHolder(View itemView) { //grab item from view into this Holder
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            description = (TextView) itemView.findViewById(R.id.description);
-            date = (TextView) itemView.findViewById(R.id.date);
+            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
+            warnings = (TextView) itemView.findViewById(R.id.warnings);
+            whenUsing = (TextView) itemView.findViewById(R.id.whenUsing);
+            productNdc = (TextView) itemView.findViewById(R.id.productNdc);
+            prodType = (TextView) itemView.findViewById(R.id.prodType);
+            route = (TextView) itemView.findViewById(R.id.route);
+            packageNdc = (TextView) itemView.findViewById(R.id.packageNdc);
+            brand_name = (TextView) itemView.findViewById(R.id.brand_name);
+            dosageAndAdministration = (TextView) itemView.findViewById(R.id.dosageAndAdministration);
+            pregnancyOrBreastFeeding = (TextView) itemView.findViewById(R.id.pregnancyOrBreastFeeding);
+            stop_use = (TextView) itemView.findViewById(R.id.stop_use);
+            do_not_use = (TextView) itemView.findViewById(R.id.do_not_use);
+            indicationsAndUsage = (TextView) itemView.findViewById(R.id.indicationsAndUsage);
+            activeIngredient = (TextView) itemView.findViewById(R.id.activeIngredient);
         }
 
         void bind(final int listIndex) {
-            //bind 3 newsItem attribute to this newsHolder
-            title.setText("Title: "+listDrugs.get(listIndex).getPackageNdc() );
-            description.setText("Description: "+listDrugs.get(listIndex).getBrand_name());
-            date.setText("Date: "+listDrugs.get(listIndex).getRoute() );
+
+            inactiveIngredient.setText("inactiveIngredient: "+listDrugs.get(listIndex).getInactiveIngredient());
+            warnings.setText("warnings: "+listDrugs.get(listIndex).getWarnings());
+            whenUsing.setText("whenUsing: "+listDrugs.get(listIndex).getWhenUsing());
+            productNdc.setText("productNdc: "+listDrugs.get(listIndex).getProductNdc());
+            prodType.setText("prodType: "+listDrugs.get(listIndex).getProdType());
+            route.setText("route: "+listDrugs.get(listIndex).getRoute());
+            packageNdc.setText("packageNdc: "+listDrugs.get(listIndex).getPackageNdc());
+            brand_name.setText("brand_name: "+listDrugs.get(listIndex).getBrand_name());
+            dosageAndAdministration.setText("dosageAndAdministration: "+listDrugs.get(listIndex).getDosageAndAdministration());
+            pregnancyOrBreastFeeding.setText("pregnancyOrBreastFeeding: "+listDrugs.get(listIndex).getPregnancyOrBreastFeeding());
+            stop_use.setText("stop_use: "+listDrugs.get(listIndex).getStop_use());
+            do_not_use.setText("do_not_use: "+listDrugs.get(listIndex).getDo_not_use());
+            indicationsAndUsage.setText("indicationsAndUsage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
+            activeIngredient.setText("activeIngredient: "+listDrugs.get(listIndex).getActiveIngredient());
 
             //binding click listener
 //            itemView.setOnClickListener(new View.OnClickListener() {
