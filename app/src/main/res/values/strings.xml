@@ -10,7 +10,9 @@
 
     //generate qr
     <string name="gen_qr">Generate QR Code</string>
+    <string name="qr_code_pic">QR Code Picture</string>
 
     //scan qr
     <string name="scan_qr">Scan QR Code</string>
+
 </resources>
