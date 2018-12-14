@@ -122,25 +122,27 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
             indicationsAndUsage.setText("Indications and Usage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
             activeIngredient.setText("Active Ingredient: "+listDrugs.get(listIndex).getActiveIngredient());
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
 
 
-                    String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
-                            + "https://api.fda.gov/drug/ndc.json?search=product_ndc:"
-                            + listDrugs.get(listIndex).getProductNdc();
+            String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+                    + "https://api.fda.gov/drug/ndc.json?search=product_ndc:"
+                    + listDrugs.get(listIndex).getProductNdc();
+
+            Picasso.get().load(urlString).into(imageView);
 
                     //Picasso.with(this).load(urlString).into(imageView);
 
-                    Picasso.get().load(urlString).into(imageView);
+
 
                     /*intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
                     intent.putExtra("urlString", urlString);
                     intent.setPackage("com.android.chrome");
                     instance.startActivity(intent);*/
-                }
-            });
+//                }
+//            });
 
             //binding click listener
 //            itemView.setOnClickListener(new View.OnClickListener() {
