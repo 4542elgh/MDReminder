@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Debug;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,12 +67,15 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         TextView indicationsAndUsage;
         TextView activeIngredient;
         ImageView imageView;
+        ImageView packageView;
         public MDItemViewHolder(View itemView) { //grab item from view into this Holder
             super(itemView);
 
-            Bitmap bitmap = BitmapFactory.decodeFile("/res/raw/a0078a0666.jpg");
+
+//            ((ImageView)view).setImageBitmap(BitmapFactory.decodeFile("/data/data/com.myapp/files/someimage.jpg"));
 //            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            packageView = (ImageView) itemView.findViewById(R.id.packageView);
 //            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             warnings = (TextView) itemView.findViewById(R.id.warnings);
             whenUsing = (TextView) itemView.findViewById(R.id.whenUsing);
@@ -88,6 +93,15 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         }
 
         void bind(final int listIndex) {
+            String drawableName = listDrugs.get(listIndex).getProductNdc();
+            drawableName = "a"+drawableName;
+            drawableName = drawableName.replace('-','a');
+            Log.d("i am getting called",drawableName);
+            if (instance.getResources().getIdentifier(drawableName,"drawable",instance.getPackageName())!=0){
+                Log.d("i am getting called","");
+                packageView.setImageResource(instance.getResources().getIdentifier(drawableName,"drawable",instance.getPackageName()));
+            }
+
 
 //            inactiveIngredient.setText("Inactive Ingredient: "+listDrugs.get(listIndex).getInactiveIngredient());
             warnings.setText("Warnings: "+listDrugs.get(listIndex).getWarnings());

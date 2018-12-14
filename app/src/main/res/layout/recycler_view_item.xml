@@ -17,6 +17,17 @@
         android:layout_height="wrap_content"
         android:padding="0dip" >
 
+        <ImageView
+            android:id="@+id/packageView"
+            android:layout_width="176dp"
+            android:layout_height="137dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:adjustViewBounds="true"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="1.0"
+            card_view:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="252dp" />
         <TextView
             android:id="@+id/brand_name"
             android:layout_width="0dip"
@@ -119,8 +130,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:paddingBottom="10dp"
+            android:layout_width="156dp"
+            android:layout_height="141dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="84dp"
             android:adjustViewBounds="true"
             android:src="@color/colorAccent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/do_not_use" />
 
