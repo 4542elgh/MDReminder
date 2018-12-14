@@ -57,10 +57,10 @@ public class DrugRepository {
         protected Void doInBackground(final List<Drug>... params) {
             try {
                 // temporarily pass empty string until able to test buildURL function
-                URL drugSearchUrl = NetworkUtils.buildNdcUrl();
-                String response = NetworkUtils.getResponseFromHttpUrl(drugSearchUrl);
-                mAsyncTaskDao.clearAll();
-                mAsyncTaskDao.insert(JsonUtils.getDrugList(response));
+//                URL drugSearchUrl = NetworkUtils.buildNdcUrl();
+//                String response = NetworkUtils.getResponseFromHttpUrl(drugSearchUrl);
+//                mAsyncTaskDao.clearAll();
+//                mAsyncTaskDao.insert(JsonUtils.getDrugList(response));
             }
             catch(Exception e) {
                 Log.e("exception during sync", e.toString());
