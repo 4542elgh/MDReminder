@@ -20,7 +20,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
     Context instance; //referencing instance, so this adapter know what app was doing
     Intent intent = null;
     ArrayList<Drug> listDrugs; //new arraylist of newsitem from async task
-    ImageView imageView = (ImageView) findViewById(R.id.imageView);
+
 
     public MDRecyclerViewAdapter(Context context, ArrayList<Drug> listDrugs){ //constructor
         this.instance = context;
@@ -63,9 +63,10 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         TextView do_not_use;
         TextView indicationsAndUsage;
         TextView activeIngredient;
-
+        ImageView imageView;
         public MDItemViewHolder(View itemView) { //grab item from view into this Holder
             super(itemView);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView);
             inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             warnings = (TextView) itemView.findViewById(R.id.warnings);
             whenUsing = (TextView) itemView.findViewById(R.id.whenUsing);
