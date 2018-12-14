@@ -16,14 +16,8 @@ public class Drug {
     @ColumnInfo(name="inactiveIngredient")
     private String inactiveIngredient;
 
-    @ColumnInfo(name="purpose")
-    private String purpose;
-
     @ColumnInfo(name="warnings")
     private String warnings;
-
-    @ColumnInfo(name="questions")
-    private String questions;
 
     @ColumnInfo(name="whenUsing")
     private String whenUsing;
@@ -45,12 +39,6 @@ public class Drug {
     @ColumnInfo(name="brand_name")
     private String brand_name;
 
-    @ColumnInfo(name="manufacturer_name")
-    private String manufacturer_name;
-
-    @ColumnInfo(name="version")
-    private String version;
-
     @ColumnInfo(name="dosageAndAdministration")
     private String dosageAndAdministration;
 
@@ -70,29 +58,24 @@ public class Drug {
     private String activeIngredient;
 
     public Drug(int id,
-                String inactiveIngredient, String purpose,
-                String warnings, String questions,
+                String inactiveIngredient, String warnings,
                 String whenUsing, String productNdc,
                 String prodType, String route, String packageNdc,
-                String brand_name, String manufacturer_name,
-                String version, String dosageAndAdministration,
+                String brand_name, String version,
+                String dosageAndAdministration,
                 String pregnancyOrBreastFeeding, String stop_use,
                 String do_not_use, String indicationsAndUsage,
                 String activeIngredient) {
 
         this.id = id;
         this.inactiveIngredient = inactiveIngredient;
-        this.purpose = purpose;
         this.warnings = warnings;
-        this.questions = questions;
         this.whenUsing = whenUsing;
         this.productNdc = productNdc;
         this.prodType = prodType;
         this.route = route;
         this.packageNdc = packageNdc;
         this.brand_name = brand_name;
-        this.manufacturer_name = manufacturer_name;
-        this.version = version;
         this.dosageAndAdministration = dosageAndAdministration;
         this.pregnancyOrBreastFeeding = pregnancyOrBreastFeeding;
         this.stop_use = stop_use;
@@ -113,17 +96,13 @@ public class Drug {
                 String activeIngredient) {
 
         this.inactiveIngredient = inactiveIngredient;
-        this.purpose = purpose;
         this.warnings = warnings;
-        this.questions = questions;
         this.whenUsing = whenUsing;
         this.productNdc = productNdc;
         this.prodType = prodType;
         this.route = route;
         this.packageNdc = packageNdc;
         this.brand_name = brand_name;
-        this.manufacturer_name = manufacturer_name;
-        this.version = version;
         this.dosageAndAdministration = dosageAndAdministration;
         this.pregnancyOrBreastFeeding = pregnancyOrBreastFeeding;
         this.stop_use = stop_use;
@@ -140,16 +119,8 @@ public class Drug {
         return inactiveIngredient;
     }
 
-    public String getPurpose() {
-        return purpose;
-    }
-
     public String getWarnings() {
         return warnings;
-    }
-
-    public String getQuestions() {
-        return questions;
     }
 
     public String getWhenUsing() {
@@ -174,14 +145,6 @@ public class Drug {
 
     public String getBrand_name() {
         return brand_name;
-    }
-
-    public String getManufacturer_name() {
-        return manufacturer_name;
-    }
-
-    public String getVersion() {
-        return version;
     }
 
     public String getDosageAndAdministration() {
@@ -215,16 +178,8 @@ public class Drug {
         this.inactiveIngredient = inactiveIngredient;
     }
 
-    public void setPurpose(String purpose) {
-        this.purpose = purpose;
-    }
-
     public void setWarnings(String warnings) {
         this.warnings = warnings;
-    }
-
-    public void setQuestions(String questions) {
-        this.questions = questions;
     }
 
     public void setWhenUsing(String whenUsing) {
@@ -249,14 +204,6 @@ public class Drug {
 
     public void setBrand_name(String brand_name) {
         this.brand_name = brand_name;
-    }
-
-    public void setManufacturer_name(String manufacturer_name) {
-        this.manufacturer_name = manufacturer_name;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
     }
 
     public void setDosageAndAdministration(String dosageAndAdministration) {
