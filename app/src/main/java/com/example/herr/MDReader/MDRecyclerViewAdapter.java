@@ -80,20 +80,20 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 
         void bind(final int listIndex) {
 
-            inactiveIngredient.setText("inactiveIngredient: "+listDrugs.get(listIndex).getInactiveIngredient());
-            warnings.setText("warnings: "+listDrugs.get(listIndex).getWarnings());
-            whenUsing.setText("whenUsing: "+listDrugs.get(listIndex).getWhenUsing());
-            productNdc.setText("productNdc: "+listDrugs.get(listIndex).getProductNdc());
-            prodType.setText("prodType: "+listDrugs.get(listIndex).getProdType());
-            route.setText("route: "+listDrugs.get(listIndex).getRoute());
-            packageNdc.setText("packageNdc: "+listDrugs.get(listIndex).getPackageNdc());
-            brand_name.setText("brand_name: "+listDrugs.get(listIndex).getBrand_name());
-            dosageAndAdministration.setText("dosageAndAdministration: "+listDrugs.get(listIndex).getDosageAndAdministration());
-            pregnancyOrBreastFeeding.setText("pregnancyOrBreastFeeding: "+listDrugs.get(listIndex).getPregnancyOrBreastFeeding());
-            stop_use.setText("stop_use: "+listDrugs.get(listIndex).getStop_use());
-            do_not_use.setText("do_not_use: "+listDrugs.get(listIndex).getDo_not_use());
-            indicationsAndUsage.setText("indicationsAndUsage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
-            activeIngredient.setText("activeIngredient: "+listDrugs.get(listIndex).getActiveIngredient());
+            inactiveIngredient.setText("Inactive Ingredient: "+listDrugs.get(listIndex).getInactiveIngredient());
+            warnings.setText("Warnings: "+listDrugs.get(listIndex).getWarnings());
+            whenUsing.setText("When Using: "+listDrugs.get(listIndex).getWhenUsing());
+            productNdc.setText("Product NDC: "+listDrugs.get(listIndex).getProductNdc());
+            prodType.setText("Product Type: "+listDrugs.get(listIndex).getProdType());
+            route.setText("Route: "+listDrugs.get(listIndex).getRoute());
+            packageNdc.setText("Package NDC: "+listDrugs.get(listIndex).getPackageNdc());
+            brand_name.setText("Brand Name: "+listDrugs.get(listIndex).getBrand_name());
+            dosageAndAdministration.setText("Dosage and Administration: "+listDrugs.get(listIndex).getDosageAndAdministration());
+            pregnancyOrBreastFeeding.setText("Pregnancy or Breast Feeding: "+listDrugs.get(listIndex).getPregnancyOrBreastFeeding());
+            stop_use.setText("Stop Use: "+listDrugs.get(listIndex).getStop_use());
+            do_not_use.setText("Do Not Use: "+listDrugs.get(listIndex).getDo_not_use());
+            indicationsAndUsage.setText("Indications and Usage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
+            activeIngredient.setText("Active Ingredient: "+listDrugs.get(listIndex).getActiveIngredient());
 
             //binding click listener
 //            itemView.setOnClickListener(new View.OnClickListener() {
