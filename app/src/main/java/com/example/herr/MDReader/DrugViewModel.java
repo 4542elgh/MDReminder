@@ -25,9 +25,9 @@ public class DrugViewModel extends AndroidViewModel {
         mAllDrugs = mRepository.getAllDrugs();
     }
 
-    public void sync(){
-        mRepository.sync(null);
-    }
+//    public void sync(){
+//        mRepository.sync(null);
+//    }
 
     public void loadAll() {
         mRepository.updateList(null);
