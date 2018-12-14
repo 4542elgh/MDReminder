@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:padding="0dip" >
 
-
         <TextView
             android:id="@+id/brand_name"
             android:layout_width="0dip"
