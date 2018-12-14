@@ -56,7 +56,7 @@ public abstract class DrugDatabase extends RoomDatabase {
             drugDao.clearAll();
 
             //read ndc.json and parse values into dao
-            InputStream dataStream = context.getResources().openRawResource(R.raw.ndc);
+            InputStream dataStream = context.getResources().openRawResource(R.raw.label);
 
             String json;
 
