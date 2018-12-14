@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.Nullable;
 import android.arch.lifecycle.Observer;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,6 +29,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Array;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
@@ -34,13 +37,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    private RecyclerView mRecyclerView;
+    private MDRecyclerViewAdapter mAdapter;
+    private ArrayList<Drug> drugArrayList = new ArrayList<>();
     private DrugViewModel mDrugViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAdapter = new MDRecyclerViewAdapter(this,drugArrayList);
+        mRecyclerView = (RecyclerView)findViewById(R.id.drugs_recyclerView); //reference the recycler view
+        mRecyclerView.setAdapter(mAdapter); //using adapter
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ActivityCompat.requestPermissions(MainActivity.this,
                 new String[]{Manifest.permission.CAMERA},
@@ -80,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         // else continue with any other code you need in the method
-
     }
 
     @Override
@@ -113,7 +121,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) { //when finish async call
-            ArrayList<Drug> drugList = JsonUtils.getDrugList(s);
+            ArrayList<Drug> drugTemp = JsonUtils.getDrugList(s);
+            Log.d("jsonLog",drugTemp.get(0).getProductNdc());
+            mAdapter.listDrugs.clear();
+            mAdapter.listDrugs.addAll(drugTemp);
+            mAdapter.notifyDataSetChanged();
         }
     }
 
@@ -125,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.qr_scan_icon:{
+            case R.id.scan_qr:{
                 IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
                 integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
                 integrator.setPrompt("Scan something");

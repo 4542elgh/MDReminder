@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:padding="8dp"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dip">
 
+  <!--Rendering the 3 components Title, Description, Time-->
   <TextView
-      android:id="@+id/drug_name"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      tools:text="@tools:sample/lorem" />
-
-  <TextView
-      android:id="@+id/drug_details"
+      android:id="@+id/title"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      tools:text="@tools:sample/lorem" />
+      android:layout_height="wrap_content" />
 
   <TextView
-      android:id="@+id/drug_ingredients"
+      android:id="@+id/description"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      tools:text="@tools:sample/lorem" />
+      android:layout_height="wrap_content" />
 
   <TextView
-      android:id="@+id/drug_dosage"
+      android:id="@+id/date"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      tools:text="@tools:sample/lorem" />
+      android:layout_height="wrap_content" />
 
 </LinearLayout>
