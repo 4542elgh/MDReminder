@@ -94,6 +94,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 
         // TODO: get ndc image show
         void bind(final int listIndex) {
+            packageView.setImageResource(0);
             String drawableName = listDrugs.get(listIndex).getProductNdc();
             drawableName = "a"+ drawableName;
             drawableName = drawableName.replace('-','a'); // e.g. output: a000a000
