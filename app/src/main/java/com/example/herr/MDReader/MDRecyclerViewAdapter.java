@@ -2,6 +2,8 @@ package com.example.herr.MDReader;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -66,6 +68,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         public MDItemViewHolder(View itemView) { //grab item from view into this Holder
             super(itemView);
 
+            Bitmap bitmap = BitmapFactory.decodeFile("/res/raw/a0078-0666.jpg");
 //            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
