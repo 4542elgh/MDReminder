@@ -2,10 +2,9 @@ package com.example.herr.MDReader;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Debug;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAdapter.MDItemViewHolder> {
@@ -36,7 +36,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
 
-        View view = inflater.inflate(R.layout.recycler_view_item, parent, shouldAttachToParentImmediately);
+        View view = inflater.inflate(R.layout.cardview_item, parent, shouldAttachToParentImmediately);
         MDItemViewHolder viewHolder = new MDItemViewHolder(view);
         return viewHolder;
     }
@@ -73,57 +73,62 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 
 
 //            ((ImageView)view).setImageBitmap(BitmapFactory.decodeFile("/data/data/com.myapp/files/someimage.jpg"));
-//            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
+            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             packageView = (ImageView) itemView.findViewById(R.id.packageView);
-//            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
+            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             warnings = (TextView) itemView.findViewById(R.id.warnings);
             whenUsing = (TextView) itemView.findViewById(R.id.whenUsing);
             productNdc = (TextView) itemView.findViewById(R.id.productNdc);
-//            prodType = (TextView) itemView.findViewById(R.id.prodType);
-//            route = (TextView) itemView.findViewById(R.id.route);
-//            packageNdc = (TextView) itemView.findViewById(R.id.packageNdc);
+            prodType = (TextView) itemView.findViewById(R.id.prodType);
+            route = (TextView) itemView.findViewById(R.id.route);
+            packageNdc = (TextView) itemView.findViewById(R.id.packageNdc);
             brand_name = (TextView) itemView.findViewById(R.id.brand_name);
             dosageAndAdministration = (TextView) itemView.findViewById(R.id.dosageAndAdministration);
-//            pregnancyOrBreastFeeding = (TextView) itemView.findViewById(R.id.pregnancyOrBreastFeeding);
-//            stop_use = (TextView) itemView.findViewById(R.id.stop_use);
+            pregnancyOrBreastFeeding = (TextView) itemView.findViewById(R.id.pregnancyOrBreastFeeding);
+            stop_use = (TextView) itemView.findViewById(R.id.stop_use);
             do_not_use = (TextView) itemView.findViewById(R.id.do_not_use);
-//            indicationsAndUsage = (TextView) itemView.findViewById(R.id.indicationsAndUsage);
-//            activeIngredient = (TextView) itemView.findViewById(R.id.activeIngredient);
+            indicationsAndUsage = (TextView) itemView.findViewById(R.id.indicationsAndUsage);
+            activeIngredient = (TextView) itemView.findViewById(R.id.activeIngredient);
         }
 
+        // TODO: get ndc image show
         void bind(final int listIndex) {
             String drawableName = listDrugs.get(listIndex).getProductNdc();
-            drawableName = "a"+drawableName;
-            drawableName = drawableName.replace('-','a');
-            Log.d("i am getting called",drawableName);
-            if (instance.getResources().getIdentifier(drawableName,"drawable",instance.getPackageName())!=0){
+            drawableName = "a"+ drawableName;
+            drawableName = drawableName.replace('-','a'); // e.g. output: a000a000
+            Log.d("i am getting called", drawableName);
+
+            int drawableId = instance.getResources().getIdentifier(drawableName,"drawable", instance.getPackageName());
+            if (drawableId != 0) {
                 Log.d("i am getting called","");
-                packageView.setImageResource(instance.getResources().getIdentifier(drawableName,"drawable",instance.getPackageName()));
+                Picasso.get().load(instance.getResources().getIdentifier(drawableName,"drawable", instance.getPackageName())).into(packageView);
+
             }
 
-
-//            inactiveIngredient.setText("Inactive Ingredient: "+listDrugs.get(listIndex).getInactiveIngredient());
+            inactiveIngredient.setText("Inactive Ingredient: "+listDrugs.get(listIndex).getInactiveIngredient());
             warnings.setText("Warnings: "+listDrugs.get(listIndex).getWarnings());
             whenUsing.setText("When Using: "+listDrugs.get(listIndex).getWhenUsing());
             productNdc.setText("Product NDC: "+listDrugs.get(listIndex).getProductNdc());
-//            prodType.setText("Product Type: "+listDrugs.get(listIndex).getProdType());
-//            route.setText("Route: "+listDrugs.get(listIndex).getRoute());
-//            packageNdc.setText("Package NDC: "+listDrugs.get(listIndex).getPackageNdc());
+            prodType.setText("Product Type: "+listDrugs.get(listIndex).getProdType());
+            route.setText("Route: "+listDrugs.get(listIndex).getRoute());
+            packageNdc.setText("Package NDC: "+listDrugs.get(listIndex).getPackageNdc());
             brand_name.setText(listDrugs.get(listIndex).getBrand_name());
             dosageAndAdministration.setText("Dosage and Administration: "+listDrugs.get(listIndex).getDosageAndAdministration());
-//            pregnancyOrBreastFeeding.setText("Pregnancy or Breast Feeding: "+listDrugs.get(listIndex).getPregnancyOrBreastFeeding());
-//            stop_use.setText("Stop Use: "+listDrugs.get(listIndex).getStop_use());
+            pregnancyOrBreastFeeding.setText("Pregnancy or Breast Feeding: "+listDrugs.get(listIndex).getPregnancyOrBreastFeeding());
+            stop_use.setText("Stop Use: "+listDrugs.get(listIndex).getStop_use());
             do_not_use.setText("Do Not Use: "+listDrugs.get(listIndex).getDo_not_use());
-//            indicationsAndUsage.setText("Indications and Usage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
-//            activeIngredient.setText("Active Ingredient: "+listDrugs.get(listIndex).getActiveIngredient());
+            indicationsAndUsage.setText("Indications and Usage: "+listDrugs.get(listIndex).getIndicationsAndUsage());
+            activeIngredient.setText("Active Ingredient: "+listDrugs.get(listIndex).getActiveIngredient());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
 
-                    String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + "https://api.fda.gov/drug/ndc.json?search=product_ndc:" + listDrugs.get(listIndex).getProductNdc();
+                    String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+                            + "https://api.fda.gov/drug/ndc.json?search=product_ndc:"
+                            + listDrugs.get(listIndex).getProductNdc();
 
                     //Picasso.with(this).load(urlString).into(imageView);
 
