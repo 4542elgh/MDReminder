@@ -26,17 +26,13 @@ public class JsonUtils {
                 // add each field into the drug repository
                 drugList.add( new Drug (
                         field.getString("inactive_ingredient"),
-                        field.getString("pupose"),
                         field.getString("warnings"),
-                        field.getString("questions"),
                         field.getString("when_using"),
                         field.getString("product_ndc"),
                         field.getString("product_type"),
                         field.getString("route"),
                         field.getString("package_ndc"),
                         field.getString("brand_name"),
-                        field.getString("manufacturer_name"),
-                        field.getString("version"),
                         field.getString("dosage_and_administration"),
                         field.getString("pregnancy_or_breast_feeding"),
                         field.getString("stop_use"),
