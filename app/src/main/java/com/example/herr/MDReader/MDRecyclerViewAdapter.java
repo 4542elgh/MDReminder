@@ -107,6 +107,15 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 
             }
 
+
+            String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+                    + "https://api.fda.gov/drug/ndc.json?search=product_ndc:"
+                    + listDrugs.get(listIndex).getProductNdc();
+
+            //Picasso.with(this).load(urlString).into(imageView);
+
+            Picasso.get().load(urlString).into(imageView);
+
             inactiveIngredient.setText("Inactive Ingredient: "+listDrugs.get(listIndex).getInactiveIngredient());
             warnings.setText("Warnings: "+listDrugs.get(listIndex).getWarnings());
             whenUsing.setText("When Using: "+listDrugs.get(listIndex).getWhenUsing());
@@ -125,19 +134,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View view) {
-
-
-            String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
-                    + "https://api.fda.gov/drug/ndc.json?search=product_ndc:"
-                    + listDrugs.get(listIndex).getProductNdc();
-
-            Picasso.get().load(urlString).into(imageView);
-
-                    //Picasso.with(this).load(urlString).into(imageView);
-
-
-
-                    /*intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
+                     /*intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
                     intent.putExtra("urlString", urlString);
                     intent.setPackage("com.android.chrome");
                     instance.startActivity(intent);*/
