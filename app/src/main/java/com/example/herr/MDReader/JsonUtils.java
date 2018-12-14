@@ -35,7 +35,7 @@ public class JsonUtils {
                     JSONArray subFields = field.getJSONArray("inactive_ingredient");
 //                    active_ingredients =  field.getString("active_ingredients");
                     for (int j = 0; j < subFields.length(); j++) {
-                        inactive_ingredient += "\n\u2022\u0009    "+subFields.getJSONObject(j).getString("name") + "    " + subFields.getJSONObject(j).getString("strength");
+                        inactive_ingredient += "\n\u2022\u0009    "+subFields.getJSONObject(j).toString();
                     }
                 }
 
@@ -51,7 +51,7 @@ public class JsonUtils {
                     for (int j = 0; j < subFields.length(); j++) {
                         warnings += "\n\u2022\u0009    "+subFields.getJSONObject(j).getString("warnings")
                                 + "    "
-                                + subFields.getJSONObject(j).getString("warnings");
+                                + subFields.getJSONObject(j).toString();
                     }
                 }
 
@@ -79,9 +79,17 @@ public class JsonUtils {
                     }
                 }
 
+//                String package_ndc = "N/A";
+//                if (field.has("package_ndc")){
+//                    package_ndc =  field.getString("package_ndc");
+//                }
                 String package_ndc = "N/A";
                 if (field.has("package_ndc")){
-                    package_ndc =  field.getString("package_ndc");
+                    route = "";
+                    JSONArray subFields = field.getJSONArray("package_ndc");
+                    for (int j = 0; j < subFields.length(); j++) {
+                        route += "\n\u2022\u0009    "+subFields.get(j);
+                    }
                 }
 
                 String brand_name = "N/A";

@@ -109,7 +109,7 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
 
 
             String urlString =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
-                    + "https://api.fda.gov/drug/ndc.json?search=product_ndc:"
+                    + "https://api.fda.gov/drug/label.json?search=openfda.product_ndc:"
                     + listDrugs.get(listIndex).getProductNdc();
 
             //Picasso.with(this).load(urlString).into(imageView);
