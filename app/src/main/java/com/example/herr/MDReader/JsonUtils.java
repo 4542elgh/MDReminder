@@ -33,9 +33,14 @@ public class JsonUtils {
                 if (field.has("inactive_ingredient")){
                     inactive_ingredient = "";
                     JSONArray subFields = field.getJSONArray("inactive_ingredient");
+                    if (subFields.length()==1){
+                        inactive_ingredient = subFields.get(0).toString();
+                    }
+                    else{
 //                    active_ingredients =  field.getString("active_ingredients");
                     for (int j = 0; j < subFields.length(); j++) {
                         inactive_ingredient += "\n\u2022\u0009    "+subFields.getJSONObject(j).toString();
+                    }
                     }
                 }
 
@@ -48,10 +53,15 @@ public class JsonUtils {
                     warnings = "";
                     JSONArray subFields = field.getJSONArray("warnings");
 //                    active_ingredients =  field.getString("active_ingredients");
+                    if (subFields.length()==1){
+                        warnings = subFields.get(0).toString();
+                    }
+                    else{
                     for (int j = 0; j < subFields.length(); j++) {
                         warnings += "\n\u2022\u0009    "+subFields.getJSONObject(j).getString("warnings")
                                 + "    "
                                 + subFields.getJSONObject(j).toString();
+                    }
                     }
                 }
 
@@ -87,6 +97,9 @@ public class JsonUtils {
                 if (field.has("package_ndc")){
                     route = "";
                     JSONArray subFields = field.getJSONArray("package_ndc");
+                    if (subFields.length()==1){
+                        route = subFields.get(0).toString();
+                    }
                     for (int j = 0; j < subFields.length(); j++) {
                         route += "\n\u2022\u0009    "+subFields.get(j);
                     }
@@ -126,9 +139,14 @@ public class JsonUtils {
                 if (field.has("active_ingredients")){
                     active_ingredients = "";
                     JSONArray subFields = field.getJSONArray("active_ingredients");
+                    if (subFields.length()==1){
+                        active_ingredients = subFields.get(0).toString();
+                    }
+                    else{
 //                    active_ingredients =  field.getString("active_ingredients");
                     for (int j = 0; j < subFields.length(); j++) {
                         active_ingredients += "\n\u2022\u0009    "+subFields.getJSONObject(j).getString("name") + "    " + subFields.getJSONObject(j).getString("strength");
+                    }
                     }
                 }
 
