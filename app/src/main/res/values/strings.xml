@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
+    //app name string
+    <string name="app_name">MD Reader</string>
+
+    //qr button strings
+    <string name="qr_button_name">QRB</string>
+
+    //search strings
+    <string name="search_bar_string">SBS</string>
 </resources>
