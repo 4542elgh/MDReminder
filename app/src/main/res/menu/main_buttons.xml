@@ -2,12 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
+  <!--  <item
         android:id="@+id/qr_scan_icon"
         app:showAsAction="always"
         android:layout_width="wrap_content"
         android:icon="@mipmap/qr_scan_icon"
         android:title="@string/qr_button_name">
 
-    </item>
+    </item>-->
+
+  <item
+        android:id="@+id/generate_qr"
+        android:icon="@mipmap/qr_scan_icon"
+        android:title="@string/gen_qr" />
+    <item
+        android:id="@+id/scan_qr"
+        android:icon="@mipmap/qr_scan_icon"
+        android:title="@string/scan_qr" />
 </menu>

@@ -7,4 +7,10 @@
 
     //search strings
     <string name="search_bar_string">SBS</string>
+
+    //generate qr
+    <string name="gen_qr">Generate QR Code</string>
+
+    //scan qr
+    <string name="scan_qr">Scan QR Code</string>
 </resources>
