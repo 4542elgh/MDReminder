@@ -13,6 +13,7 @@ import android.arch.lifecycle.Observer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -52,22 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 //TODO: create drug adapter and set the drugs here
                 // Update the cached copy of the words in the adapter.
 //                mNewsAdapter.setNews(new ArrayList<NewsItem>(news));
-            }
-        });
-
-
-
-        //TODO: finish implementing recycler view logic here
-
-        final Button button = findViewById(R.id.qr_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setPrompt("Scan something");
-                integrator.setOrientationLocked(false);
-                integrator.setBeepEnabled(false);
-                integrator.initiateScan();
             }
         });
     }
@@ -136,5 +121,21 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_buttons,menu);
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.qr_scan_icon:{
+                IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("Scan something");
+                integrator.setOrientationLocked(false);
+                integrator.setBeepEnabled(false);
+                integrator.initiateScan();
+                return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
