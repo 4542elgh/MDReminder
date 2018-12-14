@@ -68,10 +68,10 @@ public class MDRecyclerViewAdapter extends RecyclerView.Adapter<MDRecyclerViewAd
         public MDItemViewHolder(View itemView) { //grab item from view into this Holder
             super(itemView);
 
-            Bitmap bitmap = BitmapFactory.decodeFile("/res/raw/a0078-0666.jpg");
+            Bitmap bitmap = BitmapFactory.decodeFile("/res/raw/a0078a0666.jpg");
 //            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
+//            inactiveIngredient = (TextView) itemView.findViewById(R.id.inactiveIngredient);
             warnings = (TextView) itemView.findViewById(R.id.warnings);
             whenUsing = (TextView) itemView.findViewById(R.id.whenUsing);
             productNdc = (TextView) itemView.findViewById(R.id.productNdc);
